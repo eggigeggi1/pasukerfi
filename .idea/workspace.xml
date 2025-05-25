@@ -21,7 +21,9 @@
     </option>
   </component>
   <component name="FindBugs-IDEA-Workspace">
-    <analyzeAfterCompile>true</analyzeAfterCompile>
+    <compileBeforeAnalyze>false</compileBeforeAnalyze>
+    <annotationTextRangeMarkup>false</annotationTextRangeMarkup>
+    <annotationGutterIcon>false</annotationGutterIcon>
     <toolWindowToFront>false</toolWindowToFront>
   </component>
   <component name="ProjectId" id="2wW3Dv2scCfldmSnWJ38l5QYZ6D" />
@@ -38,7 +40,10 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RunManager">
