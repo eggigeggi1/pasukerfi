@@ -11,10 +11,13 @@ public class PasukerfiApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(PasukerfiApplication.class.getResource("/vidmot/pasukerfi-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 866, 299);
+        Scene scene = new Scene(fxmlLoader.load(), 866, 300);
+        PasukerfiController controller = fxmlLoader.getController();
         stage.setTitle("Pásukerfi BICC");
         stage.setScene(scene);
         stage.show();
+
+        controller.setupScaling(stage);
     }
 
     public static void main(String[] args) {

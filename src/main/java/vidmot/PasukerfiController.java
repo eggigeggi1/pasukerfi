@@ -1,12 +1,18 @@
 package vidmot;
 
 import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 import vinnsla.PasukerfiVinnsla;
 import vinnsla.Starfsmadur;
+
+import java.time.LocalDate;
+import java.util.Map;
 
 public class PasukerfiController {
     public Label fxNext;
@@ -30,16 +36,25 @@ public class PasukerfiController {
     public Starfsmadur[] starfsmennAGolfi;
     public Starfsmadur vinnaLengst = null;
     public PasukerfiVinnsla vinnsla;
+    public StackPane scalingRoot;
+    public Label infoLabel;
 
     public void initialize() {
         fxNext.setText("");
         fx1.setText("");
+        fx1.setVisible(false);
         fx2.setText("");
+        fx2.setVisible(false);
         fx3.setText("");
+        fx3.setVisible(false);
         fx4.setText("");
+        fx4.setVisible(false);
         fx5.setText("");
+        fx5.setVisible(false);
         fx6.setText("");
+        fx6.setVisible(false);
         fx7.setText("");
+        fx7.setVisible(false);
         fxT1.setText("");
         fxT2.setText("");
         fxT3.setText("");
@@ -51,30 +66,24 @@ public class PasukerfiController {
         tLabels = new Label[] {fxT1, fxT2, fxT3, fxT4, fxT5, fxT6, fxT7};
         vinnsla = new PasukerfiVinnsla();
         starfsmennAGolfi = new Starfsmadur[7];
+        checkBirthday();
     }
+
     public void onInput(ActionEvent actionEvent) {
         String input = fxInput.getText();
         String[] inputs = input.trim().split("\\s+");
         boolean[] founds = new boolean[3];
 
         for (int i = 0; i < inputs.length; i++) {
-            for(int k = 0; k < vinnsla.starfsmennID.length; k++) {
-                if (inputs[i].equalsIgnoreCase(vinnsla.starfsmennID[k])) {
-                    founds[i] = true;
-                    break;
-                }
+            if (vinnsla.starfsmennID.containsKey(inputs[i].toUpperCase())) {
+                founds[i] = true;
             }
         }
-
 
         if (inputs[0].equalsIgnoreCase("add")) {
             String newID = inputs[1].toUpperCase();
             if (founds[1] && vinnsla.starfsmennAGolfi < 7 && !isWorking(newID)) {
-                vinnsla.starfsmennAGolfi++;
-                Starfsmadur newStarfsmadur = new Starfsmadur(newID, tLabels[vinnsla.starfsmennAGolfi - 1]);
-                labels[vinnsla.starfsmennAGolfi - 1].setText(newStarfsmadur.getId());
-                newStarfsmadur.getTimeLabel().setText("0:00:00");
-                starfsmennAGolfi[vinnsla.starfsmennAGolfi - 1] = newStarfsmadur;
+                addID(newID);
             }
         }
 
@@ -88,22 +97,6 @@ public class PasukerfiController {
                 }
             }
             removeID(remIndex);
-            for (int i = remIndex; i < 6; i++) {
-                if (starfsmennAGolfi[i + 1] != null) {
-                    starfsmennAGolfi[i] = starfsmennAGolfi[i + 1];
-                    starfsmennAGolfi[i+1] = null;
-                    labels[i].setText(labels[i + 1].getText());
-                    starfsmennAGolfi[i].setTimeLabel(tLabels[i]);
-                    tLabels[i+1].setText("");
-                } else {
-                    break; // Nothing more to shift
-                }
-            }
-            int lastIndex = vinnsla.starfsmennAGolfi;
-            starfsmennAGolfi[lastIndex] = null;
-            labels[lastIndex].setText("");
-
-
             vinnaLengst = null;
         }
         if (founds[0]) {
@@ -121,11 +114,8 @@ public class PasukerfiController {
                     }
                 }
             }
-            Starfsmadur newStarfsmadur = new Starfsmadur(inputs[0].toUpperCase(), tLabels[vinnaLengstIndex]);
-            labels[vinnaLengstIndex].setText(newStarfsmadur.getId());
-            newStarfsmadur.getTimeLabel().setText("0:00:00");
-            starfsmennAGolfi[vinnaLengstIndex].stopTimer();
-            starfsmennAGolfi[vinnaLengstIndex] = newStarfsmadur;
+            removeID(vinnaLengstIndex);
+            addID(inputs[0].toUpperCase());
             vinnaLengst = null;
             fxInput.clear();
         }
@@ -140,7 +130,7 @@ public class PasukerfiController {
         if (vinnaLengst != null) {
             vinnsla.next = vinnaLengst.getId();
         }
-
+        checkBirthday();
         fxNext.setText(vinnsla.next);
         fxInput.clear();
     }
@@ -162,10 +152,52 @@ public class PasukerfiController {
         starfsmennAGolfi[remIndex] = null;
         labels[remIndex].setText("");
         tLabels[remIndex].setText("");
+        for (int i = remIndex; i < 6; i++) {
+            if (starfsmennAGolfi[i + 1] != null) {
+                starfsmennAGolfi[i] = starfsmennAGolfi[i + 1];
+                starfsmennAGolfi[i+1] = null;
+                labels[i].setText(labels[i + 1].getText());
+                starfsmennAGolfi[i].setTimeLabel(tLabels[i]);
+                tLabels[i+1].setText("");
+            } else {
+                break; // Nothing more to shift
+            }
+        }
+        int lastIndex = vinnsla.starfsmennAGolfi;
+        starfsmennAGolfi[lastIndex] = null;
+        labels[lastIndex].setText("");
+        labels[lastIndex].setVisible(false);
+    }
+
+    public void addID(String newID) {
+        vinnsla.starfsmennAGolfi++;
+        Starfsmadur newStarfsmadur = new Starfsmadur(newID, tLabels[vinnsla.starfsmennAGolfi - 1]);
+        labels[vinnsla.starfsmennAGolfi - 1].setText(newStarfsmadur.getId());
+        labels[vinnsla.starfsmennAGolfi - 1].setVisible(true);
+        newStarfsmadur.getTimeLabel().setText("0:00:00");
+        starfsmennAGolfi[vinnsla.starfsmennAGolfi - 1] = newStarfsmadur;
     }
 
     public void onClose(ActionEvent actionEvent) {
         Platform.exit();
+    }
+
+    public void checkBirthday() {
+        LocalDate today = LocalDate.now();
+
+        for(Map.Entry<String, LocalDate> entry : vinnsla.starfsmennID.entrySet()) {
+            LocalDate birthday = entry.getValue();
+
+            if (birthday.getMonth() == today.getMonth() &&
+                    birthday.getDayOfMonth() == today.getDayOfMonth()) {
+
+                infoLabel.setText("🎉 Til hamingju með afmælið " + entry.getKey() + "! 🎉");
+                return;
+            }
+            else {
+                infoLabel.setText("");
+            }
+        }
     }
 
     public void onAbout(ActionEvent actionEvent) {
@@ -175,5 +207,21 @@ public class PasukerfiController {
         alert.setContentText("Notið add skipun til að bæta við starfsmanni. \nDæmi: add EO <Enter>\n\nNotið rem skipun til að taka út starfsmann. \nDæmi: rem EO <Enter>\n\nSláið inn einkennisstafi starfsmann einungis til að láta starfsmann leysa af þann sem er næst/ur í pásu. \nDæmi: EO <Enter>");
 
         alert.showAndWait();
+    }
+
+    public void setupScaling(Stage stage) {
+        double baseWidth = 866;
+        double baseHeight = 300;
+
+        ChangeListener<Number> resizeListener = (obs, oldVal, newVal) -> {
+            double scaleX = stage.getWidth() / baseWidth;
+            double scaleY = stage.getHeight() / baseHeight;
+            double scale = Math.min(scaleX, scaleY);
+            scalingRoot.setScaleX(scale);
+            scalingRoot.setScaleY(scale);
+        };
+
+        stage.widthProperty().addListener(resizeListener);
+        stage.heightProperty().addListener(resizeListener);
     }
 }

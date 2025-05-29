@@ -1,0 +1,30 @@
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-background-color: #f7f7f7;
+}
+
+.label {
+    -fx-text-fill: #333;
+}
+
+/* Label showing names (EO) */
+.name-label {
+    -fx-border-radius: 5px;
+    -fx-border-width: 2px;
+    -fx-border-color: #999;
+    -fx-background-color: #e0e0e0;
+    -fx-text-fill: black;
+}
+
+/* Big label inside “Next for break” */
+.next-label {
+    -fx-font-size: 100px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #222;
+    -fx-background-color: #e0e0e0;
+    -fx-border-color: #999;
+    -fx-border-width: 2px;
+    -fx-padding: 20px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
