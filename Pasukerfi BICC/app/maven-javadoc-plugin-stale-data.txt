@@ -1,0 +1,46 @@
+@options
+@packages
+@argfile
+--class-path
+'C:/Users/eggig/.m2/repository/org/openjfx/javafx-base/23.0.1/javafx-base-23.0.1.jar;C:/Users/eggig/.m2/repository/org/openjfx/javafx-controls/23.0.1/javafx-controls-23.0.1.jar;C:/Users/eggig/.m2/repository/org/openjfx/javafx-fxml/23.0.1/javafx-fxml-23.0.1.jar;C:/Users/eggig/.m2/repository/org/openjfx/javafx-graphics/23.0.1/javafx-graphics-23.0.1.jar;C:/Users/eggig/.m2/repository/com/squareup/okhttp3/okhttp/4.9.1/okhttp-4.9.1.jar;C:/Users/eggig/.m2/repository/com/squareup/okio/okio/2.8.0/okio-2.8.0.jar;C:/Users/eggig/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.4.0/kotlin-stdlib-common-1.4.0.jar;C:/Users/eggig/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.4.10/kotlin-stdlib-1.4.10.jar;C:/Users/eggig/.m2/repository/org/jetbrains/annotations/13.0/annotations-13.0.jar;C:/Users/eggig/.m2/repository/com/google/code/gson/gson/2.8.8/gson-2.8.8.jar'
+--module-path
+'C:/Users/eggig/IdeaProjects/Pasukerfi/target/Pasukerfi-1.0-SNAPSHOT.jar;C:/Users/eggig/.m2/repository/org/openjfx/javafx-base/23.0.1/javafx-base-23.0.1-win.jar;C:/Users/eggig/.m2/repository/org/openjfx/javafx-controls/23.0.1/javafx-controls-23.0.1-win.jar;C:/Users/eggig/.m2/repository/org/openjfx/javafx-fxml/23.0.1/javafx-fxml-23.0.1-win.jar;C:/Users/eggig/.m2/repository/org/openjfx/javafx-graphics/23.0.1/javafx-graphics-23.0.1-win.jar'
+--patch-module
+vidmot.pasukerfi='C:/Users/eggig/IdeaProjects/Pasukerfi/src/main/java;C:/Users/eggig/IdeaProjects/Pasukerfi/target/generated-sources/annotations'
+-encoding
+'UTF-8'
+-public
+--release
+17
+--module-source-path
+'C:/Users/eggig/IdeaProjects/Pasukerfi/target/site/apidocs/src'
+-author
+-bottom
+'Copyright &#169; 2025. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/eggig/IdeaProjects/Pasukerfi/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Pasukerfi 1.0-SNAPSHOT API'
+-nohelp
+-use
+-version
+-windowtitle
+'Pasukerfi 1.0-SNAPSHOT API'
+vidmot
+'C:/Users/eggig/IdeaProjects/Pasukerfi/src/main/java/module-info.java'
+C:\Users\eggig\IdeaProjects\Pasukerfi\target\site\apidocs\allclasses-index.html = 1748213379813
+C:\Users\eggig\IdeaProjects\Pasukerfi\target\site\apidocs\allpackages-index.html = 1748213379819
+C:\Users\eggig\IdeaProjects\Pasukerfi\target\site\apidocs\element-list = 1748213379704
+C:\Users\eggig\IdeaProjects\Pasukerfi\target\site\apidocs\index-all.html = 1748213379859
+C:\Users\eggig\IdeaProjects\Pasukerfi\target\site\apidocs\index.html = 1748213379869
+C:\Users\eggig\IdeaProjects\Pasukerfi\target\site\apidocs\member-search-index.js = 1748213379830
+C:\Users\eggig\IdeaProjects\Pasukerfi\target\site\apidocs\module-search-index.js = 1748213379822
+C:\Users\eggig\IdeaProjects\Pasukerfi\target\site\apidocs\overview-tree.html = 1748213379791
+C:\Users\eggig\IdeaProjects\Pasukerfi\target\site\apidocs\package-search-index.js = 1748213379825
+C:\Users\eggig\IdeaProjects\Pasukerfi\target\site\apidocs\search.html = 1748213379864
+C:\Users\eggig\IdeaProjects\Pasukerfi\target\site\apidocs\tag-search-index.js = 1748213379833
+C:\Users\eggig\IdeaProjects\Pasukerfi\target\site\apidocs\type-search-index.js = 1748213379827

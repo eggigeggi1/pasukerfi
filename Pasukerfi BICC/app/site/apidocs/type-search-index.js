@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"vidmot","l":"PasukerfiApplication"},{"p":"vidmot","l":"PasukerfiController"}];updateSearchResults();
