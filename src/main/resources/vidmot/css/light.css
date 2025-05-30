@@ -16,6 +16,18 @@
     -fx-text-fill: black;
 }
 
+.name-label:hover {
+    -fx-background-color: #3a3a3a;
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow(gaussian, #555, 5, 0.2, 0, 1);
+}
+
+.next-label:hover {
+    -fx-background-color: #3a3a3a;
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow(gaussian, #555, 5, 0.2, 0, 1);
+}
+
 /* Big label inside “Next for break” */
 .next-label {
     -fx-font-size: 100px;

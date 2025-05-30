@@ -1,0 +1,61 @@
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-background-color: #1e1e1e;
+}
+
+.label {
+    -fx-text-fill: #e0e0e0;
+}
+
+/* Label showing names (EO) */
+.name-label {
+    -fx-border-radius: 5px;
+    -fx-border-width: 2px;
+    -fx-border-color: #555;
+    -fx-background-color: #2b2b2b;
+    -fx-text-fill: #f0f0f0;
+}
+
+.name-label:hover {
+    -fx-background-color: #444444; /* Slightly lighter gray for hover */
+    -fx-text-fill: #f5f5f5;
+    -fx-effect: dropshadow(gaussian, #000000, 6, 0.3, 0, 2);
+}
+
+.next-label:hover {
+    -fx-background-color: #444444; /* Slightly lighter gray for hover */
+    -fx-text-fill: #f5f5f5;
+    -fx-effect: dropshadow(gaussian, #000000, 6, 0.3, 0, 2);
+    -fx-cursor: hand;
+}
+
+/* Big label inside “Next for break” */
+.next-label {
+    -fx-font-size: 100px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f5f5f5;
+    -fx-background-color: #333333;
+    -fx-border-color: #777;
+    -fx-border-width: 2px;
+    -fx-padding: 20px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+.menu-bar {
+    -fx-background-color: #2b2b2b;
+}
+
+.menu {
+    -fx-background-color: #2b2b2b;
+    -fx-text-fill: #f0f0f0;
+}
+
+.menu-item {
+    -fx-background-color: #2b2b2b;
+    -fx-text-fill: #f0f0f0;
+}
+
+.context-menu {
+    -fx-background-color: #2b2b2b;
+}

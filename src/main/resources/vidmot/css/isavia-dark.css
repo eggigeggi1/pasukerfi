@@ -1,0 +1,73 @@
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-background-color: #1e1e1e; /* deep dark gray */
+}
+
+/* General label styling */
+.label {
+    -fx-text-fill: #e76425;
+}
+
+/* Name labels (e.g. EO, etc.) */
+.name-label {
+    -fx-background-color: #2a2a2a;
+    -fx-text-fill: #e76425;
+    -fx-border-color: #e76425;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+}
+
+/* Hover effect for name labels */
+.name-label:hover {
+    -fx-background-color: #e76425;
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow(gaussian, #000000, 6, 0.4, 0, 2);
+}
+
+/* "Next for break" big label */
+.next-label {
+    -fx-font-size: 100px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #e76425;
+    -fx-background-color: #1e1e1e;
+    -fx-border-color: #e76425;
+    -fx-border-width: 2px;
+    -fx-padding: 20px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+.next-label:hover {
+    -fx-background-color: #e76425;
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow(gaussian, #000000, 6, 0.4, 0, 2);
+}
+
+/* Menu bar and menu */
+.menu-bar {
+    -fx-background-color: #1e1e1e;
+}
+
+.menu {
+    -fx-text-fill: #e76425;
+}
+
+.menu-item:hover {
+    -fx-background-color: #3c3c3c;
+    -fx-text-fill: #ffffff;
+}
+
+/* Input field styling */
+.text-field {
+    -fx-text-fill: #e76425;
+    -fx-border-color: #e76425;
+    -fx-border-width: 2px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-background-color: #2a2a2a;
+}
+
+.text-field:focused {
+    -fx-border-color: #ff914d;
+    -fx-background-color: #333333;
+}

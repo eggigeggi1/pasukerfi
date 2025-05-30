@@ -3,6 +3,7 @@ package vidmot;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.event.ActionEvent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -74,6 +75,18 @@ public class PasukerfiController {
         String[] inputs = input.trim().split("\\s+");
         boolean[] founds = new boolean[3];
 
+        if (input.equalsIgnoreCase("rem all") || input.equalsIgnoreCase("reset")) {
+            for (int i = 0; i < starfsmennAGolfi.length; i++) {
+                if (starfsmennAGolfi[i] != null) {
+                    removeID(i);
+                    i = -1; // Restart loop because removeID shifts everyone left
+                }
+            }
+            vinnaLengst = null;
+            vinnsla.next = "";
+            fxNext.setText("");
+        }
+
         for (int i = 0; i < inputs.length; i++) {
             if (vinnsla.starfsmennID.containsKey(inputs[i].toUpperCase())) {
                 founds[i] = true;
@@ -88,16 +101,19 @@ public class PasukerfiController {
         }
 
         if (inputs[0].equalsIgnoreCase("rem")) {
-            String remID = inputs[1].toUpperCase();
-            int remIndex = 0;
-            for (int i = 0; i < starfsmennAGolfi.length; i++) {
-                if (starfsmennAGolfi[i] == null) continue;
-                if (starfsmennAGolfi[i].getId().equalsIgnoreCase(remID)) {
-                    remIndex = i;
+            if (founds[1] && vinnsla.starfsmennAGolfi > 0) {
+                String remID = inputs[1].toUpperCase();
+                int remIndex = 0;
+                for (int i = 0; i < starfsmennAGolfi.length; i++) {
+                    if (starfsmennAGolfi[i] == null) continue;
+                    if (starfsmennAGolfi[i].getId().equalsIgnoreCase(remID)) {
+                        remIndex = i;
+                    }
                 }
+                removeID(remIndex);
+                vinnaLengst = null;
             }
-            removeID(remIndex);
-            vinnaLengst = null;
+
         }
         if (founds[0]) {
             if (vinnaLengst == null) return;
@@ -131,6 +147,9 @@ public class PasukerfiController {
             vinnsla.next = vinnaLengst.getId();
         }
         checkBirthday();
+        if (vinnsla.starfsmennAGolfi == 0) {
+            vinnsla.next = "";
+        }
         fxNext.setText(vinnsla.next);
         fxInput.clear();
     }
@@ -204,7 +223,10 @@ public class PasukerfiController {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Leiðbeiningar");
         alert.setHeaderText(null); // No header
-        alert.setContentText("Notið add skipun til að bæta við starfsmanni. \nDæmi: add EO <Enter>\n\nNotið rem skipun til að taka út starfsmann. \nDæmi: rem EO <Enter>\n\nSláið inn einkennisstafi starfsmann einungis til að láta starfsmann leysa af þann sem er næst/ur í pásu. \nDæmi: EO <Enter>");
+        alert.setContentText("Notið add skipun til að bæta við starfsmanni. \nDæmi: add EO <Enter>\n\nNotið rem skipun " +
+                "til að taka út starfsmann. \nDæmi: rem EO <Enter>\n\nSláið inn einkennisstafi starfsmann einungis til" +
+                " að láta starfsmann leysa af þann sem er næst/ur í pásu. \nDæmi: EO <Enter>\n\nNotið 'rem all' eða " +
+                "'reset' til að fjarlægja alla starfsmenn");
 
         alert.showAndWait();
     }
@@ -223,5 +245,30 @@ public class PasukerfiController {
 
         stage.widthProperty().addListener(resizeListener);
         stage.heightProperty().addListener(resizeListener);
+    }
+
+    public void onLightMode(ActionEvent actionEvent) {
+        Scene scene = fxNext.getScene();
+        scene.getStylesheets().clear();
+        scene.getStylesheets().add(getClass().getResource("/vidmot/css/light.css").toExternalForm());
+
+    }
+
+    public void onDarkMode(ActionEvent actionEvent) {
+        Scene scene = fxNext.getScene();
+        scene.getStylesheets().clear();
+        scene.getStylesheets().add(getClass().getResource("/vidmot/css/dark.css").toExternalForm());
+    }
+
+    public void onIsaviaMode(ActionEvent actionEvent) {
+        Scene scene = fxNext.getScene();
+        scene.getStylesheets().clear();
+        scene.getStylesheets().add(getClass().getResource("/vidmot/css/isavia.css").toExternalForm());
+    }
+
+    public void onDarkIsaviaMode(ActionEvent actionEvent) {
+        Scene scene = fxNext.getScene();
+        scene.getStylesheets().clear();
+        scene.getStylesheets().add(getClass().getResource("/vidmot/css/isavia-dark.css").toExternalForm());
     }
 }

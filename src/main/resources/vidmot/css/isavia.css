@@ -1,0 +1,72 @@
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-background-color: #f4f4f4; /* light gray background */
+}
+
+/* General label styling */
+.label {
+    -fx-text-fill: #e76425;
+}
+
+/* Name labels (e.g. EO, etc.) */
+.name-label {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #e76425;
+    -fx-border-color: #e76425;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+}
+
+/* Name label hover effect */
+.name-label:hover {
+    -fx-background-color: #e76425;
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow(gaussian, #888888, 4, 0.3, 0, 1);
+    -fx-cursor: hand;
+}
+
+
+
+/* Big label inside “Next for break” */
+.next-label {
+    -fx-font-size: 100px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #e76425;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e76425;
+    -fx-border-width: 2px;
+    -fx-padding: 20px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+.next-label:hover {
+    -fx-background-color: #e76425;
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow(gaussian, #888888, 4, 0.3, 0, 1);
+    -fx-cursor: hand;
+}
+
+/* Menu bar and menu styling */
+.menu-bar {
+    -fx-background-color: #f4f4f4;
+}
+
+.menu {
+    -fx-text-fill: #e76425;
+}
+
+.menu-item:hover {
+    -fx-background-color: #f3cbb7;
+    -fx-text-fill: #222;
+}
+
+.text-field {
+    -fx-text-fill: #e76425;              /* Text color */
+    -fx-border-color: #e76425;           /* Border color */
+    -fx-border-width: 2px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-background-color: #ffffff;       /* Optional: white background */
+}
+
