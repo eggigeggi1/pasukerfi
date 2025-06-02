@@ -26,12 +26,11 @@
     -fx-background-color: #444444; /* Slightly lighter gray for hover */
     -fx-text-fill: #f5f5f5;
     -fx-effect: dropshadow(gaussian, #000000, 6, 0.3, 0, 2);
-    -fx-cursor: hand;
 }
 
 /* Big label inside “Next for break” */
 .next-label {
-    -fx-font-size: 100px;
+    -fx-font-size: 96px;
     -fx-font-weight: bold;
     -fx-text-fill: #f5f5f5;
     -fx-background-color: #333333;
@@ -46,16 +45,33 @@
     -fx-background-color: #2b2b2b;
 }
 
+/* Top-level menu items (e.g. "File", "Help") */
 .menu {
     -fx-background-color: #2b2b2b;
-    -fx-text-fill: #f0f0f0;
+    -fx-text-fill: #e76425; /* branded orange text */
 }
 
+.menu:hover {
+    -fx-background-color: #3a3a3a; /* or a slightly lighter tone than your menu bar */
+}
+
+
+/* Dropdown menu items */
 .menu-item {
-    -fx-background-color: #2b2b2b;
+    -fx-background-color: #1e1e1e;
     -fx-text-fill: #f0f0f0;
 }
 
+/* Hover effect for dropdown menu items */
+.menu-item:hover {
+    -fx-background-color: #3a3a3a;
+    -fx-text-fill: #ffffff;
+}
+
+/* Optional: add drop shadow to dropdown menu for elevation */
 .context-menu {
-    -fx-background-color: #2b2b2b;
+    -fx-background-color: #1e1e1e;
+    -fx-effect: dropshadow(gaussian, #000000, 6, 0.3, 0, 2);
+    -fx-padding: 4px;
+    -fx-background-radius: 6px;
 }

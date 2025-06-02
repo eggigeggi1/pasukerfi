@@ -48,7 +48,7 @@
                   </MenuBar>
                </children>
             </HBox>
-            <Label fx:id="fxNext" alignment="CENTER" layoutX="852.0" layoutY="5.0" prefHeight="137.0" prefWidth="215.0" styleClass="next-label" text="EO" textAlignment="CENTER" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="80.0">
+            <Label fx:id="fxNext" alignment="CENTER" layoutX="852.0" layoutY="5.0" prefHeight="137.0" prefWidth="215.0" styleClass="next-label" text="ARB" textAlignment="CENTER" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="80.0">
                <font>
                   <Font name="Segoe UI Bold" size="96.0" />
                </font>
@@ -66,39 +66,39 @@
             </Label>
             <HBox layoutX="14.4" layoutY="111.2" prefHeight="82.0" prefWidth="610.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="110.0">
                <children>
-                  <Label fx:id="fx1" alignment="CENTER" prefHeight="138.0" prefWidth="85.0" styleClass="name-label" text="TIO">
+                  <Label fx:id="fx1" alignment="CENTER" prefHeight="138.0" prefWidth="85.0" styleClass="name-label" text="MA">
                      <font>
-                        <Font name="Calibri Bold" size="55.0" />
+                        <Font name="Calibri Bold" size="45.0" />
                      </font>
                   </Label>
-                  <Label fx:id="fx2" alignment="CENTER" prefHeight="138.0" prefWidth="85.0" styleClass="name-label" text="EO">
+                  <Label fx:id="fx2" alignment="CENTER" prefHeight="138.0" prefWidth="85.0" styleClass="name-label" text="ARB">
                      <font>
-                        <Font name="Calibri Bold" size="55.0" />
+                        <Font name="Calibri Bold" size="45.0" />
                      </font>
                   </Label>
                   <Label fx:id="fx3" alignment="CENTER" prefHeight="138.0" prefWidth="85.0" styleClass="name-label" text="TIO">
                      <font>
-                        <Font name="Calibri Bold" size="55.0" />
+                        <Font name="Calibri Bold" size="45.0" />
                      </font>
                   </Label>
                   <Label fx:id="fx4" alignment="CENTER" prefHeight="138.0" prefWidth="85.0" styleClass="name-label" text="EO">
                      <font>
-                        <Font name="Calibri Bold" size="55.0" />
+                        <Font name="Calibri Bold" size="45.0" />
                      </font>
                   </Label>
                   <Label fx:id="fx5" alignment="CENTER" prefHeight="138.0" prefWidth="85.0" styleClass="name-label" text="EO">
                      <font>
-                        <Font name="Calibri Bold" size="55.0" />
+                        <Font name="Calibri Bold" size="45.0" />
                      </font>
                   </Label>
                   <Label fx:id="fx6" alignment="CENTER" prefHeight="138.0" prefWidth="85.0" styleClass="name-label" text="EO">
                      <font>
-                        <Font name="Calibri Bold" size="55.0" />
+                        <Font name="Calibri Bold" size="45.0" />
                      </font>
                   </Label>
                   <Label fx:id="fx7" alignment="CENTER" prefHeight="138.0" prefWidth="85.0" styleClass="name-label" text="EO">
                      <font>
-                        <Font name="Calibri Bold" size="55.0" />
+                        <Font name="Calibri Bold" size="45.0" />
                      </font>
                   </Label>
                </children>

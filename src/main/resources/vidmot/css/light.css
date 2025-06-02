@@ -30,7 +30,7 @@
 
 /* Big label inside “Next for break” */
 .next-label {
-    -fx-font-size: 100px;
+    -fx-font-size: 96px;
     -fx-font-weight: bold;
     -fx-text-fill: #222;
     -fx-background-color: #e0e0e0;

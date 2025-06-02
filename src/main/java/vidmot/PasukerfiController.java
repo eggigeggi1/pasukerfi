@@ -209,9 +209,13 @@ public class PasukerfiController {
 
             if (birthday.getMonth() == today.getMonth() &&
                     birthday.getDayOfMonth() == today.getDayOfMonth()) {
-
-                infoLabel.setText("🎉 Til hamingju með afmælið " + entry.getKey() + "! 🎉");
-                return;
+                if (entry.getKey().equalsIgnoreCase("AT") || entry.getKey().equalsIgnoreCase("LH")) {
+                    infoLabel.setText("");
+                }
+                else {
+                    infoLabel.setText("🎉 Til hamingju með afmælið " + entry.getKey() + "! 🎉");
+                    return;
+                }
             }
             else {
                 infoLabel.setText("");

@@ -22,14 +22,13 @@
     -fx-background-color: #e76425;
     -fx-text-fill: #ffffff;
     -fx-effect: dropshadow(gaussian, #888888, 4, 0.3, 0, 1);
-    -fx-cursor: hand;
 }
 
 
 
 /* Big label inside “Next for break” */
 .next-label {
-    -fx-font-size: 100px;
+    -fx-font-size: 96px;
     -fx-font-weight: bold;
     -fx-text-fill: #e76425;
     -fx-background-color: #ffffff;
@@ -44,13 +43,8 @@
     -fx-background-color: #e76425;
     -fx-text-fill: #ffffff;
     -fx-effect: dropshadow(gaussian, #888888, 4, 0.3, 0, 1);
-    -fx-cursor: hand;
 }
 
-/* Menu bar and menu styling */
-.menu-bar {
-    -fx-background-color: #f4f4f4;
-}
 
 .menu {
     -fx-text-fill: #e76425;
